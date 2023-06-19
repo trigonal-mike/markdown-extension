@@ -1,1 +1,1 @@
-# markdown-extension
+# markdown-it-plugin
