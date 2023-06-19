@@ -1,5 +1,7 @@
 import MarkdownIt = require('markdown-it');
 import * as vscode from 'vscode';
+//import markdownItMermaid from "@liradb2000/markdown-it-mermaid";
+
 export function activate(context: vscode.ExtensionContext) {
   const config = vscode.workspace.getConfiguration('mmd');
   //console.log(config)
@@ -31,7 +33,17 @@ export function activate(context: vscode.ExtensionContext) {
             return '</span></details>\n';
           }
         },
+      })
+      //.use(require('markdown-it-katex'))
+      .use(require('markdown-it-emoji'))
+      .use(require('markdown-it-textual-uml'))
+      //.use(markdownItMermaid)
+      .use(require('markdown-it-multimd-table'), {
+          multiline:  true,
+          rowspan:    true,
+          headerless: true,
       });
+
 
       return md;
     },
