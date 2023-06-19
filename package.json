@@ -17,6 +17,16 @@
 		"configuration": {
 			"title": "Multi Markdown",
       "properties": {
+        "qqq": {
+          "type": "string",
+          "default": "qqq",
+          "description": "qqq"
+        },
+        "mmd.zzz": {
+          "type": "boolean",
+          "default": false,
+          "description": "zzz"
+        },
         "mmd.yyy": {
           "type": "boolean",
           "default": false,

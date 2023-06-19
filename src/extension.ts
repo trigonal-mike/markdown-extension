@@ -1,7 +1,15 @@
 import MarkdownIt = require('markdown-it');
 import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
-  // const userConfig = vscode.workspace.getConfiguration('markdown-it-container-question');
+  const config = vscode.workspace.getConfiguration('mmd');
+  //console.log(config)
+  const y = config.get("yyy");
+  const x = config.get("xxx");
+  console.log("###########");
+  console.log(x);
+  console.log(y);
+  //console.log(config.inspect("mmd"));
+  console.log(config.inspect("qqq"));
 
   return {
     extendMarkdownIt(md: MarkdownIt) {
