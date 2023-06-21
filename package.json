@@ -13,24 +13,43 @@
 	"activationEvents": [],
 	"main": "./out/extension.js",
 	"contributes": {
+		"languages": [{
+			"id": "markdown",
+			"aliases": ["mmd"],
+			"extensions": [".mmd"]
+		}],
 		"markdown.markdownItPlugins": true,
 		"configuration": {
 			"title": "Multi Markdown",
       "properties": {
-        "qqq": {
+        "mmd.withEmoji": {
+          "type": "boolean",
+          "default": true,
+          "description": "Render Markdown with Emoji Support"
+        },
+        "mmd.array": {
+					"type": "array",
+					"items": {
+							"type": "object",
+							"title": "inner objects",
+							"properties": {
+									"name": {
+											"type": "string",
+											"description": "Name of inner object"
+									},
+									"size": {
+											"type": "number",
+											"description": "Size of inner object"
+									}
+							}
+					},
+					"default": [],
+					"description": "my test configurations"
+				},
+        "mmd.qqq": {
           "type": "string",
           "default": "qqq",
           "description": "qqq"
-        },
-        "mmd.zzz": {
-          "type": "boolean",
-          "default": false,
-          "description": "zzz"
-        },
-        "mmd.yyy": {
-          "type": "boolean",
-          "default": false,
-          "description": "yyy"
         },
         "mmd.xxx": {
           "type": "string",
@@ -75,7 +94,8 @@
 		"markdown-it-container": "^3.0.0",
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-textual-uml": "^0.11.0",
-    "markdown-it-multimd-table": "^4.1.3"
+    "markdown-it-multimd-table": "^4.1.3",
+		"markdown-it-katex": "^2.0.3"
 	},
 	"repository": {
 		"url": "https://github.com/trigonal-mike/markdown-extension"
