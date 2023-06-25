@@ -1,0 +1,29 @@
+{
+	"xxx": {
+		"scope": "markdown",
+		"prefix": "textbf",
+		"body": [
+			"\\textbf{$1}",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"yyy": {
+		"scope": "markdown",
+		"prefix": "\\matref",
+		"body": [
+			"\\matref{$1}{$2}",
+			"$3"
+		],
+		"description": "Log output to console"
+	},
+	"zzz": {
+		"scope": "markdown",
+		"prefix": "\\matref_1",
+		"body": [
+			"[${1:Link}](http://www.mathworks.com/help/matlab/ref/${2:functionname}.html)",
+			"$0"
+		],
+		"description": "Log output to console"
+	}
+}

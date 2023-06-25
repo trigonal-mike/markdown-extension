@@ -1,5 +1,5 @@
 
-# Flächeninhalt eines Bereiches zwischen zwei
+\# Flächeninhalt eines Bereiches zwischen zwei
   Polynomen
 
 Schreiben Sie eine \matlab-\matref{Funktion}{function}
@@ -10,7 +10,7 @@ die auf dem Intervall $[x_1,x_2]$ den Flächeninhalt zwischen
 °p1° und °p2° berechnet.
 
 \default 
-Werden nur 3 Inputargumente, oder das vierte leer (°p2 = []°), übergeben, 
+Werden nur 3 Inputargumente, oder `das` vierte leer (°p2 = []°), übergeben, 
 dann setzen Sie °p2° auf Null (#matrefe{nargin},#matrefe{isempty}). In 
 diesem Fall wird die Fläche zwischen °p1° und der Nulllinie berechnet.
 
@@ -26,4 +26,6 @@ Untergrenze ein und erhält somit den Wert des bestimmten Integrals.
 
 \hw
 Verwenden Sie auch die Funktion °polyadd°.
+[ghgfhfg](http://www.mathworks.com/help/matlab/ref/functionname.html)
+[tjfzjfjh](http://www.mathworks.com/help/matlab/ref/gdhhdh.html)
 

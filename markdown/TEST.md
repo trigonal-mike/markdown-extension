@@ -12,4 +12,9 @@ hjhjk nhgj j
 jjhj
 hgjkghkhghjkjh
 jkhjlilzu
-dgg55
+
+\green{gg55}\red{gg55}\blue{gg55}
+
+\textbf{ddd}
+
+

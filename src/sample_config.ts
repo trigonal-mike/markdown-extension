@@ -1,0 +1,93 @@
+export const SAMPLE_CONFIG:JSON = <JSON><unknown> {
+  "before_replacements" : [
+    {
+      "regex": "^%.*$",
+      "replacement": "\n",
+    },
+    {
+      "regex": "^ %(.*)$",
+      "replacement": "%$1",
+    },
+    {
+      "regex": "°([^\\°]+)°",
+      "replacement": "`$1`",
+    }
+  ],
+  "after_replacements" : [
+    {
+      "regex": "\\\\(matlab|simulink|maple|mathematica|fortran|clang|cpp|python|netscape|mozilla|acroread|emacs|windows|linux|LaTex)",
+      "replacement": "<span style=\"font-variant: small-caps; font-size:120%;\">$1</span>",
+      "flags": "gmi"
+    }
+  ],
+  "commands" : [
+    {
+      "regex": "\\\\([A-Za-z0-9_]{2,})(?:\{([^}]+)\}){0,1}(?:\{([^}]+)\}){0,1}(?:\{([^}]+)\}){0,1}(?:\{([^}]+)\}){0,1}",
+      "error": "<span style=\"background-color: red;\">Command not found: {arg1}</span>",
+      "replacements" : {
+        "sponsor" : "<b>Die Erstellung dieses Kurses wurde von MathWorks gesponsert</b></br>",
+        "sponsorbild_reserve" : "<a href=\"https://www.mathworks.de/\" target=\"_blank\" border=\"0\"><img src=\"/static/MatlabPictures/bg_header_mwlogo_notag.jpg\" border=\"0\"></a> </br><b>Die Erstellung dieses Kurses wurde von MathWorks gesponsert</b></br>",
+        "sponsorbild" : "<b>Die Erstellung dieses Kurses wurde von MathWorks gesponsert</b></br><a href=\"https://www.mathworks.de/\" target=\"_blank\" border=\"0\"><img src=\"/static/MatlabPictures/bg_header_mwlogo_notag.jpg\" border=\"0\"></a>",
+        "hw" : "<u>Hinweis:</u></br>",
+        "inputproblem" : "<u>Problem mit input:</u> Wenn sie nicht direkt auf unseren Computern eingeloggt sind, funktioniert der Matlab-Befehl input nur im Test und nicht in der Konsole. Sollte Matlab nicht mehr funktionieren, gibt es rechts im Header der Console Icons die Matlab stoppen, starten oder das Programm unterbrechen. Zum eigenen Probieren kommentieren sie die Zeilen mit input aus und weisen einfach Werte zu. Für das Testen oder Abgeben müssen sie das dann wieder ändern. Direkt bei uns funktioniert alles wie es soll.</br>",
+        "ein" : "<u>Einführung:</u></br>",
+        "err" : "<u>Fehlermeldungen:</u></br>",
+        "warn" : "<u>Warnungen:</u></br>",
+        "default" : "<u>Defaultwerte:</u></br>",
+        "graph" : "<u>Graphische Ausgabe:</u></br>",
+        "zus" : "<u>Zusatz:</u></br>",
+        "ab" : "<u>Abgabe:</u></br>",
+        "geg" : "<u>Gegeben:</u> ",
+        "ges" : "<u>Gesucht:</u> ",
+        "bsp" : "<u>Beispiel:</u></br>",
+        "sc" : "<span style=\"font-variant: small-caps; font-size:120%;\">{arg2}</span>",
+        "bspneu" : "<span style=\"color:red;\">Dies ist ein neues Beispiel, das unter Umständen unentdeckte Probleme macht. Falls Sie einen solchen Verdacht haben, wenden Sie sich bitte an einen Betreuer.</span>",
+        "textit" : "<i>{arg2}</i>",
+        "emph" : "<i>{arg2}</i>",
+        "textbf" : "<span style=\"font-weight:bold;\">{arg2}</span>",
+        "redtextbf" : "<span style=\"font-weight:bold; color:red\">{arg2}</span>",
+        "tt" : "<code>{arg2}</code>",
+        "red" : "<span style=\"color: red;\">{arg2}</span>",
+        "green" : "<span style=\"color: green;\">{arg2}</span>",
+        "blue" : "<span style=\"color: blue;\">{arg2}</span>",
+        "black" : "<span style=\"color: black;\">{arg2}</span>",
+        "wikilink" : "<a href=\"http://itp.tugraz.at/wiki/index.php\" target=\"_blank\">Wiki</a>",
+        "mltutorhint" : "<a href=\"http://itp.tugraz.at/wiki/index.php/MLTutor_-_Hints#{arg2}\" target=\"_blank\">{arg3}</a>",
+        "matrefe" : "<a href=\"http://www.mathworks.com/help/matlab/ref/{arg2}.html\" target=\"_blank\">{arg2}</a>",
+        "matref" : "<a href=\"http://www.mathworks.com/help/matlab/ref/{arg3}.html\" target=\"_blank\">{arg2}</a>",
+        "MatlabLearning" : "<a href=\"http://www.mathworks.com/help/matlab/learn_matlab/\" target=\"_blank\">Learning Matlab</a>",
+        "MatlabReference" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Reference</a>",
+        "MatlabMathematics" : "<a href=\"http://www.mathworks.com/help/matlab/\" target=\"_blank\">Mathematics</a>",
+        "MatlabCreatingPlots" : "<a href=\"http://www.mathworks.com/help/matlab/creating_plots/\" target=\"_blank\">Creating Plots</a>",
+        "MatlabProgramming" : "<a href=\"http://www.mathworks.com/help/matlab/matlab_prog/\" target=\"_blank\">Matlab Programming</a>",
+        "MatlabDataAnalysis" : "<a href=\"http://www.mathworks.com/help/matlab/data_analysis/\" target=\"_blank\">Data Analysis</a>",
+        "MatlabEnvironment" : "<a href=\"http://www.mathworks.com/help/matlab/matlab_env/\" target=\"_blank\">Matlab Environment</a>",
+        "MatlabVisualize" : "<a href=\"http://www.mathworks.com/help/matlab/visualize/\" target=\"_blank\">Visualize</a>",
+        "MatlabCreatingGUIs" : "<a href=\"http://www.mathworks.com/help/matlab/creating_guis/\" target=\"_blank\">Creating GUIs</a>",
+        "MatlabExternalInterfacesReference" : "<a href=\"http://www.mathworks.com/help/matlab/apiref/\" target=\"_blank\">External Interfaces Reference</a>",
+        "MatlabExternalInterfaces" : "<a href=\"http://www.mathworks.com/help/matlab/matlab_external/\" target=\"_blank\">External Interfaces</a>",
+        "MatlabReferenceFunctionsCategoricalList" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Functions Categorial List</a>",
+        "MatlabReferenceMathematics" : "<a href=\"http://www.mathworks.com/help/matlab/\" target=\"_blank\">Mathematics</a>",
+        "MatlabReferenceMathematicsArraysAndMatrices" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Arrays and Matrices</a>",
+        "MatlabReferenceMathematicsLinearAlgebra" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Linear Algebra</a>",
+        "MatlabReferenceMathematicsElementaryMath" : "<a href=\"http://www.mathworks.com/help/matlab/elementary-math/\" target=\"_blank\">Elementary Math</a>",
+        "MatlabReferenceMathematicsPolynomials" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Polynomials</a>",
+        "MatlabReferenceMathematicsInterporlationAndComputationalGeometry" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Interpolation and Computational Geometry</a>",
+        "MatlabReferenceMathematicsCoordinateSystemConversion" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Coordinate System Conversion</a>",
+        "MatlabReferenceMathematicsNonlinearNumericalMethods" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Nonlinear Numerical Methods</a>",
+        "MatlabReferenceMathematicsSpecializedMath" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Specialized Math</a>",
+        "MatlabReferenceMathematicsSparseMatrices" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Sparse Matrices</a>",
+        "MatlabReferenceMathematicsMathConstants" : "<a href=\"http://www.mathworks.com/help/matlab/ref/\" target=\"_blank\">Mathematical Constants</a>",
+        "MatlabCharactersAndStrings" : "<a href=\"http://www.mathworks.com/help/matlab/characters-and-strings/\" target=\"_blank\">Elementary Math</a>",
+        "matlabpublish" : "<a href=\"/dynamic_documents/MatlabPublish/{arg2}.html\" target=\"_blank\">{arg3}</a>",
+        "matlabbook" : "<a href=\"/dynamic_documents/MatlabBooks/{arg2}.pdf\" target=\"_blank\">{arg3}</a>",
+        "praesentationen" : "<a href=\"/dynamic_documents/Praesentationen/{arg2}.pdf\" target=\"_blank\">{arg3}</a>",
+        "matlabtest" : "<a href=\"/dynamic_documents/MatlabTest/{arg2}.html\" target=\"_blank\">{arg3}</a>",
+        "matlabtestsolution" : "<a href=\"/dynamic_documents/MatlabTestSolution/{arg2}.html\" target=\"_blank\">{arg3}</a>",
+        "anleitung" : "<a href=\"/dynamic_documents/MatlabTutorAnleitung/{arg2}.pdf\" target=\"_blank\">{arg3}</a>",
+        "description" : "<a href=\"/dynamic_documents/MatlabTutorDescription/{arg2}.html\" target=\"_blank\">{arg3}</a>",
+        "appsoftkapitel" : "<a href=\"/dynamic_documents/Skriptum/kernbich.skriptum.kapitel-{arg2}.de.pdf\" target=\"_blank\">Skriptum Kapitel {arg2}</a>"
+      }
+    }
+  ],
+}
